@@ -13,6 +13,9 @@ class App {
             view: OneView
         },
     ]
+    appState ={
+        favorites: [],
+    }
     constructor() {
         window.addEventListener('hashchange', this.route.bind(this));
         this.route();
@@ -23,13 +26,13 @@ class App {
         }
         let currentRoute = this.routes.find(s => s.path === location.hash);
         let view = null;
-        console.log(currentRoute);
+        // console.log(currentRoute);
         if(!currentRoute){
             view = NotFoundView;
         } else {
             view = currentRoute.view
         }
-        this.currentView = new view();
+        this.currentView = new view(this.appState);
         this.currentView.render();
     }
 }
