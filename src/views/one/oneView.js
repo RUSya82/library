@@ -5,6 +5,7 @@ export class OneView extends AbstractView{
         super();
         this.setTitle('one view');
     }
+
     render() {
         this.app.innerHTML = '';
         const div = document.createElement('div');

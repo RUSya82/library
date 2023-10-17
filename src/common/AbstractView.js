@@ -1,15 +1,19 @@
-export class AbstractView{
-    appState = {}
+export class AbstractView {
+    appState = {};
+
     constructor() {
         this.app = document.getElementById('root');
     }
-    render(){
+
+    render() {
         return;
     }
-    destroy(){
+
+    destroy() {
         return;
     }
-    setTitle(title){
+
+    setTitle(title) {
         document.title = title;
     }
 }
