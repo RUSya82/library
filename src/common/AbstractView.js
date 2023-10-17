@@ -1,7 +1,6 @@
 export class AbstractView{
     appState = {}
-    constructor(appState) {
-        this.appState = appState;
+    constructor() {
         this.app = document.getElementById('root');
     }
     render(){
