@@ -1,5 +1,5 @@
 import {MainView} from './views/main/mainView';
-import {OneView} from './views/one/oneView';
+import {FavoritesView} from './views/favorites/favorites';
 import {NotFoundView} from './views/404/notFoundView';
 
 class App {
@@ -8,10 +8,8 @@ class App {
             path: '',
             view: MainView,
         },
-        {
-            path: '#one',
-            view: OneView,
-        },
+        {path: '#favorites', view: FavoritesView},
+
     ];
     appState = {
         favorites: [],

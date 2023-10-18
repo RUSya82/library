@@ -20,10 +20,14 @@ export class MainView extends AbstractView {
         offset: 0,
         numFound: 0,
     };
+    destroy() {
+        onChange.unsubscribe(this.appState);
+        onChange.unsubscribe(this.state);
+    }
 
     appStateHook(path) {
         if (path === 'favorites') {
-            console.log(this.appState.favorites.length);
+            this.render();
         }
     }
 
@@ -50,6 +54,9 @@ export class MainView extends AbstractView {
     render() {
         this.app.innerHTML = '';
         const main = document.createElement('div');
+        main.innerHTML = `
+			<h1>Найдено книг – ${this.state.numFound}</h1>
+		`
         main.append(new Search(this.state).render());
         main.append(new CardListComponent(this.appState, this.state).render());
 
